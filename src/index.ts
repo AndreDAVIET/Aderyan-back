@@ -2,6 +2,8 @@ import { UsersController } from './controller/users.controller';
 import express from 'express';
 import loaders from './loaders';
 import { PostsController } from './controller/posts.controller';
+import { MarchandController } from './controller/marchand.controller';
+import { VilleController } from './controller/ville.controller';
 
 async function startServer() {
     // Récupération de l'application initiale
@@ -11,6 +13,8 @@ async function startServer() {
     await loaders(app);
 
     // Ajout des différentes route de votre application
+    MarchandController(app);
+    VilleController(app);
     PostsController(app);
     UsersController(app);
 
